@@ -30,14 +30,14 @@ AddEventHandler( "playerConnecting", function(name, setReason, deferrals)
 			if response then
 				local userinfo = json.decode(response)
 				if userinfo['banned'] == "true" then
-					deferrals.done("Ban Reason: " .. userinfo['reason'] .. " ⚫ Banned Until: " .. userinfo['banned_until'] .. " ⚫ Banned By: " .. userinfo['staff'] .. " ⚫ Ban Issued: " .. userinfo['ban_issued'])
+					deferrals.done("Ban grund: " .. userinfo['reason'] .. " ⚫ Banned indtil: " .. userinfo['banned_until'] .. " ⚫ Banned af: " .. userinfo['staff'] .. " ⚫ Ban udstedt: " .. userinfo['ban_issued'])
 				else
 					deferrals.done()
 				end
 			end
 		end)
 	else 
-		setReason("Error! Steam is required to play on this FiveM server.")
+		setReason("Fejl! Du skal have steam kørende!")
 		CancelEvent()
 	end
 end)
